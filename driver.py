@@ -1,7 +1,7 @@
-from fibonacci import *
-from vedic import *
+from gold import *
 import math
 import random
+
 
 if __name__ == "__main__":
     # sequence = digit_sums_of_sequence([fibo_term_wo_recursion(i) for i in range(1, 10000)])

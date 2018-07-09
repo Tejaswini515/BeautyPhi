@@ -6,6 +6,31 @@ def digit_sum(n):
 
 digit_sums_of_sequence = lambda sequence: map(digit_sum, sequence)
 
+
+def golden_logic(n, start1=1, start2=1):
+    # naturally starts with fibonacci
+    # n is positive integer
+    if n <= 0:
+        return
+    b = start2-start1
+    a = start1-b
+    for i in range(n):
+        term = a+b
+        a = b
+        b = term
+    return term
+
+
+def fibonacci_term(n):
+    if n == 1 or n == 2:
+        return 1
+    return fibo_term(n-1)+fibo_term(n-2)
+
+def fibonacci_term_wo_recursion(n):
+    # find term without recursion
+    return golden_logic(n)
+
+
 def is_sub_sequence_repeating(sequence, sub_sequence):
     factor = len(sequence)/len(sub_sequence)
     for i in range(0, factor-1):
@@ -16,13 +41,15 @@ def is_sub_sequence_repeating(sequence, sub_sequence):
             return False
     return True
 
+
 def find_looping_variable(sequence):
     for idx, itm in enumerate(sequence[1:]):
         if itm != sequence[0]:
             continue
         if is_sub_sequence_repeating(sequence, sequence[:idx+1]):
             return idx+1
-    return None
+    return 
+
 
 def ratios_of_consecutive_two(sequence):
     ratios = []
