@@ -24,7 +24,8 @@ def golden_logic(n, start1=1, start2=1):
 def fibonacci_term(n):
     if n == 1 or n == 2:
         return 1
-    return fibo_term(n-1)+fibo_term(n-2)
+    return fibonacci_term(n-1)+fibonacci_term(n-2)
+    
 
 def fibonacci_term_wo_recursion(n):
     # find term without recursion
